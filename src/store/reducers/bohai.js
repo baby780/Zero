@@ -1,15 +1,28 @@
 import {handleActions} from "redux-actions";
-import {weekAsyncType} from "actions/actionsTypes"
+import {ZeroAsyncType,ZeroTwoAsyncType,ZeroThressAsyncType} from "actions/actionsTypes"
 
 const defaultState = {
-    Zero:[]
+    Zero:[],
+    ZeroTwo:[],
+    ZeroThree:[]
 }
 
 
 export default handleActions({
-   /*  [weekAsyncType]:(state,action)=>{
-        let weekState = JSON.parse(JSON.stringify(state));
-        weekState.Zero = action.payload.data;
-        return weekState
-    } */
+    [ZeroAsyncType]:(state,action)=>{
+        let zeroState = JSON.parse(JSON.stringify(state));
+        zeroState.Zero = action.payload.data.data.data;
+        return zeroState
+        
+    },
+    [ZeroTwoAsyncType]:(state,action)=>{
+        let zerotwoState=JSON.parse(JSON.stringify(state));
+        zerotwoState.ZeroTwo=action.payload.data.data.data;
+        return zerotwoState;
+    },
+    [ZeroThressAsyncType]:(state,action)=>{
+        let zerothreeState=JSON.parse(JSON.stringify(state));
+        zerothreeState.ZeroThree=action.payload.data.data.data;
+        return zerothreeState;
+    }
 },defaultState)

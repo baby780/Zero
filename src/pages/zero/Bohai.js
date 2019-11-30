@@ -1,23 +1,27 @@
 import React, { Fragment } from "react";
-import { BohaiTop, BohaiContent, BohaiBanner, BohaiNav, BohaiNotice, BohaiSubfield, BohaiSpecial, BohaiStore } from "./styled"
+import { BohaiTop, BohaiContent, BohaiBanner, BohaiNav, BohaiNotice, BohaiSubfield, BohaiSpecial } from "./styled"
 /* import store from "../../store"
 import {getBoahiAction} from "../../actions/bohaiAction.js"; */
 import { HashRouter, Route, Redirect, Switch, Link, NavLink } from "react-router-dom";
-import {connect} from "react-redux";
-import {mapStateToProps,mapDispatchToProps} from "./mapStore"
-@connect(mapStateToProps,mapDispatchToProps)
+import BohaiStores from "components/Bohaistore";
+import { Carousel, WingBlank } from 'antd-mobile';
+
+
 class Bohai extends React.Component {
     constructor() {
         super();
         this.state = {
-            ScrollTop: ""
+            ScrollTop: "",
+            imgHeight: 176,
         }
     }
     render() {
         let { ScrollTop } = this.state;
-
+       
+     
+        
         return (
-            <div className="Bohai">
+            <div className="Bohai" >
                 {/* 头部 */}
                 <BohaiTop>
                     <ul className="left">
@@ -40,7 +44,68 @@ class Bohai extends React.Component {
                     <BohaiBanner>
 
 
-                        <img src="https://u2.0xiao.cn/0xiao/upload/core/slide/image/20191105/5dc183c8e32fc.png" />
+                    <WingBlank>
+        <Carousel
+          autoplay={true}
+          infinite={true}
+       
+        >
+          
+           
+              <img
+                src="https://u2.0xiao.cn/0xiao/upload/core/slide/image/20191105/5dc183c8e32fc.png"
+                alt=""
+                style={{ width: '100%', verticalAlign: 'top' }}
+                onLoad={() => {
+                  // fire window resize event to change height
+                  window.dispatchEvent(new Event('resize'));
+                  this.setState({ imgHeight: 'auto' });
+                }}
+              />
+                <img
+                src="https://u2.0xiao.cn/0xiao/upload/core/slide/image/20191111/5dc97464ccb32.jpg"
+                alt=""
+                style={{ width: '100%', verticalAlign: 'top' }}
+                onLoad={() => {
+                  // fire window resize event to change height
+                  window.dispatchEvent(new Event('resize'));
+                  this.setState({ imgHeight: 'auto' });
+                }}
+              />
+                <img
+                src="https://u2.0xiao.cn/0xiao/upload/core/slide/image/20191110/5dc82541a43d8.jpg"
+                alt=""
+                style={{ width: '100%', verticalAlign: 'top' }}
+                onLoad={() => {
+                  // fire window resize event to change height
+                  window.dispatchEvent(new Event('resize'));
+                  this.setState({ imgHeight: 'auto' });
+                }}
+              />
+                <img
+                src="https://u2.0xiao.cn/0xiao/upload/core/slide/image/20191117/5dd0acc4d4ea8.jpg"
+                alt=""
+                style={{ width: '100%', verticalAlign: 'top' }}
+                onLoad={() => {
+                  // fire window resize event to change height
+                  window.dispatchEvent(new Event('resize'));
+                  this.setState({ imgHeight: 'auto' });
+                }}
+              />
+                <img
+                src="https://u2.0xiao.cn/0xiao/upload/core/slide/image/20191124/5dda9b2c98a5d.jpg"
+                alt=""
+                style={{ width: '100%', verticalAlign: 'top' }}
+                onLoad={() => {
+                  // fire window resize event to change height
+                  window.dispatchEvent(new Event('resize'));
+                  this.setState({ imgHeight: 'auto' });
+                }}
+              />
+           
+       
+        </Carousel>
+      </WingBlank>
 
                     </BohaiBanner>
                     {/* 导航 */}
@@ -135,193 +200,65 @@ class Bohai extends React.Component {
 
                             </li>
                             <li>
-                                <img src="https://u2.0xiao.cn/3cfood/listlogo/image/20160502/572724e93b71d.jpg!150-120" />
-                                <a>照烧鸡盖饭</a>
+                                <img src="https://u2.0xiao.cn/3cfood_shop/license/image/1a0ce792bc10152f.png!150-120" />
+                                <a>招牌珍珠奶茶</a>
                                 <div className="pirce">
-                                    <span>￥10</span>
-                                    <span>¥13</span>
+                                    <span>￥5</span>
+                                    <span>¥8</span>
                                 </div>
 
                             </li>
                             <li>
-                                <img src="https://u2.0xiao.cn/3cfood/listlogo/image/20160502/572724e93b71d.jpg!150-120" />
-                                <a>照烧鸡盖饭</a>
+                                <img src="https://u2.0xiao.cn/3cfood_shop/license/image/cd5dbd136084ae94.png!150-120" />
+                                <a>鸡蛋卷菜饼加肠</a>
                                 <div className="pirce">
-                                    <span>￥10</span>
-                                    <span>¥13</span>
+                                    <span>￥3.99</span>
+                                    <span>¥6</span>
                                 </div>
 
                             </li>
                             <li>
-                                <img src="https://u2.0xiao.cn/3cfood/listlogo/image/20160502/572724e93b71d.jpg!150-120" />
+                                <img src="https://u2.0xiao.cn/3cfood/listlogo/image/t_22299a0cfc29aaad.jpg!150-120" />
                                 <a>照烧鸡盖饭</a>
                                 <div className="pirce">
-                                    <span>￥10</span>
-                                    <span>¥13</span>
+                                    <span>￥3.99</span>
+                                    <span>¥6</span>
                                 </div>
 
                             </li>
                         </ul>
                     </BohaiSpecial>
-                    <BohaiStore>
-                        <div className="content_top">
-                            <li>特色美食</li>
-                            <li>面类盖饭</li>
-                            <li>饮品烧烤</li>
-                        </div>
+                   
+                      
 
-                        <ul className="content">
-                            <li>
-                                <span>
-                                    <img src="https://u2.0xiao.cn/3cfood_shop/license/image/bc0a23a2be83b334.jpeg" />
-                                </span>
-                                <span>
-                                    <i className="iconfont icon-yingyezhongyingyeshijianicon"></i>
-                                    <h2>王亿花甲粉（渤海职业学院店）</h2>
-                                    <p>
-                                        <em className="iconfont icon-xing"></em><b>4.2</b>
-                                        月售：
-                                        <span>1861单</span>
-                                    </p>
-                                    <p>
-                                        起价: <span>￥10</span> 配送:<span>￥0</span>
-                                    </p>
-                                    <p className="iconfont icon-dian-copy ">
-                                        下午有课的同学请提前订餐，11点30以后订餐的，时间不确定，不出意外12点半之前可送到，请勿催单，感谢理解
-                                    </p>
-                                    <p className="iconfont icon-location"> 天津渤海职业技术学院</p>
-                                </span>
-                            </li>
-                            <li>
-                                <span>
-                                    <img src="https://u2.0xiao.cn/3cfood_shop/license/image/bc0a23a2be83b334.jpeg" />
-                                </span>
-                                <span>
-                                    <i className="iconfont icon-yingyezhongyingyeshijianicon"></i>
-                                    <h2>王亿花甲粉（渤海职业学院店）</h2>
-                                    <p>
-                                        <em className="iconfont icon-xing"></em><b>4.2</b>
-                                        月售：
-                                        <span>1861单</span>
-                                    </p>
-                                    <p>
-                                        起价: <span>￥10</span> 配送:<span>￥0</span>
-                                    </p>
-                                    <p className="iconfont icon-dian-copy ">
-                                        下午有课的同学请提前订餐，11点30以后订餐的，时间不确定，不出意外12点半之前可送到，请勿催单，感谢理解
-                                    </p>
-                                    <p className="iconfont icon-location"> 天津渤海职业技术学院</p>
-                                </span>
-                            </li>
-                            <li>
-                                <span>
-                                    <img src="https://u2.0xiao.cn/3cfood_shop/license/image/bc0a23a2be83b334.jpeg" />
-                                </span>
-                                <span>
-                                    <i className="iconfont icon-yingyezhongyingyeshijianicon"></i>
-                                    <h2>王亿花甲粉（渤海职业学院店）</h2>
-                                    <p>
-                                        <em className="iconfont icon-xing"></em><b>4.2</b>
-                                        月售：
-                                        <span>1861单</span>
-                                    </p>
-                                    <p>
-                                        起价: <span>￥10</span> 配送:<span>￥0</span>
-                                    </p>
-                                    <p className="iconfont icon-dian-copy ">
-                                        下午有课的同学请提前订餐，11点30以后订餐的，时间不确定，不出意外12点半之前可送到，请勿催单，感谢理解
-                                    </p>
-                                    <p className="iconfont icon-location"> 天津渤海职业技术学院</p>
-                                </span>
-                            </li>
-                            <li>
-                                <span>
-                                    <img src="https://u2.0xiao.cn/3cfood_shop/license/image/bc0a23a2be83b334.jpeg" />
-                                </span>
-                                <span>
-                                    <i className="iconfont icon-yingyezhongyingyeshijianicon"></i>
-                                    <h2>王亿花甲粉（渤海职业学院店）</h2>
-                                    <p>
-                                        <em className="iconfont icon-xing"></em><b>4.2</b>
-                                        月售：
-                                        <span>1861单</span>
-                                    </p>
-                                    <p>
-                                        起价: <span>￥10</span> 配送:<span>￥0</span>
-                                    </p>
-                                    <p className="iconfont icon-dian-copy ">
-                                        下午有课的同学请提前订餐，11点30以后订餐的，时间不确定，不出意外12点半之前可送到，请勿催单，感谢理解
-                                    </p>
-                                    <p className="iconfont icon-location"> 天津渤海职业技术学院</p>
-                                </span>
-                            </li>
-                            <li>
-                                <span>
-                                    <img src="https://u2.0xiao.cn/3cfood_shop/license/image/bc0a23a2be83b334.jpeg" />
-                                </span>
-                                <span>
-                                    <i className="iconfont icon-yingyezhongyingyeshijianicon"></i>
-                                    <h2>王亿花甲粉（渤海职业学院店）</h2>
-                                    <p>
-                                        <em className="iconfont icon-xing"></em><b>4.2</b>
-                                        月售：
-                                        <span>1861单</span>
-                                    </p>
-                                    <p>
-                                        起价: <span>￥10</span> 配送:<span>￥0</span>
-                                    </p>
-                                    <p className="iconfont icon-dian-copy ">
-                                        下午有课的同学请提前订餐，11点30以后订餐的，时间不确定，不出意外12点半之前可送到，请勿催单，感谢理解
-                                    </p>
-                                    <p className="iconfont icon-location"> 天津渤海职业技术学院</p>
-                                </span>
-                            </li>
-                            <li>
-                                <span>
-                                    <img src="https://u2.0xiao.cn/3cfood_shop/license/image/bc0a23a2be83b334.jpeg" />
-                                </span>
-                                <span>
-                                    <i className="iconfont icon-yingyezhongyingyeshijianicon"></i>
-                                    <h2>王亿花甲粉（渤海职业学院店）</h2>
-                                    <p>
-                                        <em className="iconfont icon-xing"></em><b>4.2</b>
-                                        月售：
-                                        <span>1861单</span>
-                                    </p>
-                                    <p>
-                                        起价: <span>￥10</span> 配送:<span>￥0</span>
-                                    </p>
-                                    <p className="iconfont icon-dian-copy ">
-                                        下午有课的同学请提前订餐，11点30以后订餐的，时间不确定，不出意外12点半之前可送到，请勿催单，感谢理解
-                                    </p>
-                                    <p className="iconfont icon-location"> 天津渤海职业技术学院</p>
-                                </span>
-                            </li>
-
-
-                        </ul>
-                    </BohaiStore>
+                      <BohaiStores/>
+                   
                 </BohaiContent>
             </div>
         )
     }
     handleScroll() {
-        let scrollTop = this.refs.bodyBox.scrollTop;
-        if (scrollTop > 1000) {
+        let height=this.refs.bodyBox.scrollTop;
+        if(height>1000){
             this.setState({
-                ScrollTop: scrollTop
+                ScrollTop:height
             })
-            console.log(this.state.ScrollTop);
-        } else {
+        }else{
             this.setState({
-                ScrollTop: ""
+                ScrollTop:""
             })
-        }
+        }  
     }
     componentDidMount(){
-        this.props.hanleAsyncZero();
+        this.handelSetime();
     }
-
+    handelSetime(){
+        setTimeout(() => {
+            this.setState({
+              data: ['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI'],
+            });
+          }, 100);
+    }
 
 
 }
