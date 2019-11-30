@@ -6,12 +6,16 @@
     "babel-plugin-import": "^1.13.0",
     "customize-cra": "^0.9.1",
     "http-proxy-middleware": "^0.20.0",
+    "js-cookie": "^2.2.1",
+    "qs": "^6.9.1",
     "react": "^16.12.0",
     "react-app-rewired": "^2.1.5",
     "react-dom": "^16.12.0",
     "react-loadable": "^5.5.0",
-    "react-scripts": "3.2.0",
-    "redux-devtools-extension": "^2.13.8"
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "^3.2.0",
+    "redux-devtools-extension": "^2.13.8",
+    "styled-components": "^4.4.1"
   },
   "scripts": {
     "start": "react-app-rewired start",
@@ -33,5 +37,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/helper-create-regexp-features-plugin": "^7.7.4",
+    "@babel/plugin-proposal-decorators": "^7.7.4",
+    "@babel/plugin-syntax-jsx": "^7.7.4"
   }
 }
