@@ -2,7 +2,8 @@ import {
     Login,
     Mine,
     Order,
-    Zero
+    Zero,
+    Dian
 } from "pages"
 
 
@@ -53,6 +54,11 @@ export const NoTabBarRoute=[
     {
         path:"/login",
         component:Login,
+        meta:{}
+    },
+    {   
+        path:"/dian",
+        component:Dian,
         meta:{}
     }
 ];
