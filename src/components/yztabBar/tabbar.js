@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import { TabBarContainer } from "./yizhuan"
 import { TabBar } from "router/yzrouter"
 import { withRouter} from "react-router-dom";
+@withRouter
  class TabBars extends Component {
     constructor() {
         super()
@@ -33,4 +34,4 @@ import { withRouter} from "react-router-dom";
        
     }
 }
-export default withRouter(TabBars)
+export default TabBars

@@ -7,14 +7,16 @@ import {HashRouter,Redirect,Switch} from "react-router-dom"
 class App extends React.Component {
   render() {
     return (
-      <HashRouter>
-      <Switch>
-          <Redirect from="/" to="/homepage" exact />
-          {routeEach(ConfigRouter)} 
-      </Switch>
 
+      <div className="kly">
+        <HashRouter>
+        <Switch>
+            <Redirect from="/" to="/homepage" exact />
+            {routeEach(ConfigRouter)} 
+        </Switch>
+      </HashRouter>
+    </div>
 
-  </HashRouter>
     )
   }
 }

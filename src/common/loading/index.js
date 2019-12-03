@@ -1,11 +1,15 @@
 import React from "react";
-
-export default  class Loading extends React.Component{
-    render(){
+import {LoadingFigure} from "./styled"
+export default class Loading extends React.Component {
+    render() {
         return (
-            <div>
-                <h2>Loading...............</h2>
-            </div>
+            <LoadingFigure>
+                <div className="dot white"></div>
+                <div className="dot"></div>
+                <div className="dot"></div>
+                <div className="dot"></div>
+                <div className="dot"></div>
+            </LoadingFigure>
         )
     }
 }
