@@ -10,6 +10,3 @@ module.exports=(app)=>(
         }
     }))
 )
-
-
-//https://tjbhzy.0xiao.com/Shop/getPageListByShop?page_list_id=14059

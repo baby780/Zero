@@ -1,5 +1,5 @@
 import {
-    Home,Message,Mine,Login,Search,Food,Canteen
+    Home,Message,Mines,Login,Search,Food,Canteen
 }from "pages"
 
 export const TabBarRouter = [
@@ -23,7 +23,7 @@ export const TabBarRouter = [
     },
     {
         path:"/mine",
-        component:Mine,
+        component:Mines,
         meta:{
             flag:false,
             requiredAuth:true
