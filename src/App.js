@@ -1,6 +1,6 @@
 import React from 'react';
 import { RouterConfig } from "router/index_szd";
-import routeEach from "./utils/routeEach";
+import routeEachd from "./utils/szd_routeEach";
 import { HashRouter as Route, Switch, Redirect } from "react-router-dom";
 class App extends React.Component {
   render() {
@@ -8,7 +8,7 @@ class App extends React.Component {
       <Route>
         <Switch>
           <Redirect from="/" to="/home" exact />
-          {routeEach(RouterConfig)}
+          {routeEachd(RouterConfig)}
         </Switch>
       </Route>
 

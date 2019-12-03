@@ -1,10 +1,11 @@
 import React from "react";
+import {MineContent} from "./styled";
 export default class Mine extends React.Component{
     render(){
         return(
-            <div>
+            <MineContent>
                 Mine
-            </div>
+            </MineContent>
         )
     }
 }

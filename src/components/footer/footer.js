@@ -2,7 +2,7 @@ import React,{Component}from "react";
 import {TabBarRouter} from "../../router/index_szd";
 import {FooterContent} from "./styled";
 import {withRouter} from "react-router-dom";
-
+@withRouter
 class Footer extends Component{
     constructor(){
         super();
@@ -26,4 +26,4 @@ class Footer extends Component{
         this.props.history.push(path);
     }
 }
-export default withRouter(Footer);
+export default Footer;

@@ -8,6 +8,7 @@ justify-content:space-around;
 position:fixed;
 bottom:0;
 background:#fff;
+z-index:20
     li{
         width:30%;height:100%;display:flex;flex-direction:column;
         align-items:center;justify-content:center;

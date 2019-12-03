@@ -1,5 +1,5 @@
 import {
-    Home,Message,Mine,Login
+    Home,Message,Mine,Login,Search,Food,Canteen
 }from "pages"
 
 export const TabBarRouter = [
@@ -18,7 +18,7 @@ export const TabBarRouter = [
         meta:{
             flag:true
         },
-        text:"信息",
+        text:"头条",
         icon: "\ue6db",
     },
     {
@@ -40,5 +40,28 @@ export const NoTabBarRouter=[
             
         },
     },
+    {
+        path:"/search",
+        component:Search,
+        meta:{
+            flag:false
+        }
+    },
+    {
+        path:"/food/:id",
+        component:Food,
+        meta:{
+            flag:false
+        }
+
+    },
+    {
+        path:"/canteen/:id/:name",
+        component:Canteen,
+        meta:{
+            flag:true
+        }
+
+    }
 ];
 export const RouterConfig = TabBarRouter.concat(NoTabBarRouter)

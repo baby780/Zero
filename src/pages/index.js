@@ -18,3 +18,15 @@ export const Login = Loadable({
     loader:_=>import("./szd_login"),
     loading:Loading
 })
+export const Search = Loadable({
+    loader:_=>import("./szd_search"),
+    loading:Loading
+})
+export const Food = Loadable({
+    loader:_=>import("./szd_food"),
+    loading:Loading
+})
+export const Canteen = Loadable({
+    loader:_=>import("./szd_fourFood"),
+    loading:Loading
+})
