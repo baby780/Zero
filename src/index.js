@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import { Provider } from "react-redux"
+import {Provider} from "react-redux";
+// import store from "./store/szd_index"
+
+
 // import store from "./store/yzindex"
 import store from "./store/Bohai"
 

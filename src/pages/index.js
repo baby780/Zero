@@ -1,5 +1,35 @@
 import Loadable from "react-loadable";
-import Loading from "common/loading/index.js";
+import Loading from "common/loading";
+
+export const Home = Loadable({
+    loader:_=>import("./szd_home"),
+    loading:Loading
+})
+export const Message = Loadable({
+    loader:_=>import("./szd_message"),
+    loading:Loading
+})
+export const Mines = Loadable({
+    loader:_=>import("./szd_mine"),
+    loading:Loading
+})
+
+// export const Login = Loadable({
+//     loader:_=>import("./szd_login"),
+//     loading:Loading
+// })
+export const Search = Loadable({
+    loader:_=>import("./szd_search"),
+    loading:Loading
+})
+export const Food = Loadable({
+    loader:_=>import("./szd_food"),
+    loading:Loading
+})
+export const Canteen = Loadable({
+    loader:_=>import("./szd_fourFood"),
+    loading:Loading
+})
 
 
 export const Dian =Loadable({
