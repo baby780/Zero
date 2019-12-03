@@ -2,18 +2,19 @@ import {ZeroAsyncAction,ZeroTwoAsyncAction,ZeroThreeAsyncAction} from "actions/a
 export const mapStateToProps=(state)=>({
     Zero:state.bohai.Zero,
     ZeroTwo:state.bohai.ZeroTwo,
-    ZeroThree:state.bohai.ZeroThree
+    ZeroThree:state.bohai.ZeroThree,
 })
 
+
 export const mapDispatchToProps=(dispatch)=>({
-    handleAsyncZero(){
-        dispatch(ZeroAsyncAction(14059))
+    handleAsyncZero(index){
+        dispatch(ZeroAsyncAction(14059,index))
     },
-    handleAsyncTwoZero(){
-        dispatch(ZeroTwoAsyncAction(14058))
+    handleAsyncTwoZero(index){
+        dispatch(ZeroTwoAsyncAction(14058,index))
     },
-    handleAsyncThreeZero(){
-        dispatch(ZeroThreeAsyncAction(13457))
+    handleAsyncThreeZero(index){
+        dispatch(ZeroThreeAsyncAction(13457,index))
     }
     
 })

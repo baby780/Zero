@@ -1,61 +1,45 @@
 import React from "react";
-import {OrderContent,Orderlike} from "./styled"
+import {OrderContent,Orderlike} from "./styled";
+import {connect} from "react-redux";
+import {mapStateToProps,mapDispatchToProps} from "./mapStore"
+@connect(mapStateToProps,mapDispatchToProps)
 class Order extends React.Component{
     render(){
+        let {Like,Ding}=this.props;
+        console.log(Ding);
         return( 
             <div className="Order">
                 <OrderContent>
                     <ul className="Order_list">
-                        <li>
-                            <h2>零点校园<i className="iconfont icon-zuo"></i></h2>
-                            <p>订单：<a>点击查看>></a></p>
-                            <p>总计：<b>￥13.7</b>——<span className="green">已完成</span></p>
-                            <p>支付：<span className="green">在线支付</span></p>
-                            <p className="botton">时间：2019-06-24 21:04:24<a className="iconfont icon-paobu">查进程</a></p>
-                            <button>点 评</button>
-                        </li>
-                        <li>
-                            <h2>零点校园<i className="iconfont icon-zuo"></i></h2>
-                            <p>订单：<a>点击查看>></a></p>
-                            <p>总计：<b>￥13.7</b>——<span className="green">已完成</span></p>
-                            <p>支付：<span className="green">在线支付</span></p>
-                            <p className="botton">时间：2019-06-24 21:04:24<a className="iconfont icon-paobu">查进程</a></p>
-                            <button>点 评</button>
-                        </li>
+                        {
+                            Ding.map((item,index)=>(
+                            <li key={index}>
+                                <h2>{item.shop_name}<i className="iconfont icon-zuo"></i></h2>
+                                <p>订单：<a>点击查看>></a></p>
+                                <p>总计：<b>￥{item.actual_price}</b>——<span className="green">已完成</span></p>
+                                <p>支付：<span className="green">在线支付</span></p>
+                                <p className="botton">时间：{item.create_time}<a className="iconfont icon-paobu">查进程</a></p>
+                                <button>点 评</button>
+                            </li>
+                            ))
+                        }
+                       
+                       
                     </ul>
                     <Orderlike>
                         <h2>猜你喜欢:</h2>
                         <div className="list">
-                                <a>
-                                    <img src="https://u2.0xiao.cn/3cfood_shop/license/image/f6ea3e51ff0969c0.png"/>
-                                    <p>柠檬养乐多</p>
-                                    <i>￥10</i>
-                                </a>
-                                <a>
-                                    <img src="https://u2.0xiao.cn/3cfood_shop/license/image/f6ea3e51ff0969c0.png"/>
-                                    <p>柠檬养乐多</p>
-                                    <i>￥10</i>
-                                </a>
-                                <a>
-                                    <img src="https://u2.0xiao.cn/3cfood_shop/license/image/f6ea3e51ff0969c0.png"/>
-                                    <p>柠檬养乐多</p>
-                                    <i>￥10</i>
-                                </a>
-                                <a>
-                                    <img src="https://u2.0xiao.cn/3cfood_shop/license/image/f6ea3e51ff0969c0.png"/>
-                                    <p>柠檬养乐多</p>
-                                    <i>￥10</i>
-                                </a>
-                                <a>
-                                    <img src="https://u2.0xiao.cn/3cfood_shop/license/image/f6ea3e51ff0969c0.png"/>
-                                    <p>柠檬养乐多</p>
-                                    <i>￥10</i>
-                                </a>
-                                <a>
-                                    <img src="https://u2.0xiao.cn/3cfood_shop/license/image/f6ea3e51ff0969c0.png"/>
-                                    <p>柠檬养乐多</p>
-                                    <i>￥10</i>
-                                </a>
+                            {
+                                Like.map((item)=>(
+                                    <a key={item.goods_id}>
+                                    <img src= {'https://u2.0xiao.cn'+item.goods_path}/>
+                                    <p>{item.goods_name}</p>
+                                    <i>￥{item.price}</i>
+                                    </a>
+                                ))
+                            }
+                               
+                               
                                 
                         </div>
                     </Orderlike>
@@ -63,6 +47,17 @@ class Order extends React.Component{
             </div>
         )
     }
+    componentDidMount(){
+        this.props.handleAsyncLike();
+        this.props.handleAsyncDing(1,10);
+    }
 }
 
 export default Order;
+
+
+
+/* 
+
+
+*/

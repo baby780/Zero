@@ -8,11 +8,12 @@ class BohaiStores extends Component {
         super()
         this.state={
            btn:["特色美食","面类盖饭","饮品烧烤"],
-           activeIndex:0
+           activeIndex:0,
         }
+       
     }
     render() {
-        let {Zero,ZeroTwo,ZeroThree}=this.props;
+        let {ZeroTwo,ZeroThree,Zero}=this.props;
         let {btn,activeIndex}=this.state;
         return (
             <BohaiStore>
@@ -25,15 +26,15 @@ class BohaiStores extends Component {
                     </div>
                 <ul className="content"> 
                 {
-                       Zero.map((item)=>(
-                        <li key={item.page_list_relevance_id} style={{display:0==activeIndex?'flex':'none'}}>
+                    Zero.map((item)=>(
+                        <li key={item.shop_id} style={{display:0==activeIndex?'flex':'none'}}>
                         <span className="left">
                         {/* item.info.pic_path */}
                             <img src={'https://u2.0xiao.cn'+item.info.pic_path} />
                            
                         </span>
                         <span className="right">
-                            <i className="iconfont icon-yingyezhongyingyeshijianicon"></i>
+                            <i className={item.info.state==0?"iconfont icon-yingyezhongyingyeshijianicon" :"iconfont icon-dayang"}></i>
                             <h2>{item.info.shop_name}</h2>
                             <p>
                                 <em className="iconfont icon-xing"></em><b>{item.info.star}</b>
@@ -53,14 +54,14 @@ class BohaiStores extends Component {
                     }  
                      {
                        ZeroTwo.map((item)=>(
-                        <li key={item.page_list_relevance_id} style={{display:1==activeIndex?'flex':'none'}}>
+                        <li key={item.shop_id} style={{display:1==activeIndex?'flex':'none'}}>
                         <span className="left">
                         {/* item.info.pic_path */}
                             <img src={'https://u2.0xiao.cn'+item.info.pic_path} />
                            
                         </span>
                         <span className="right">
-                            <i className="iconfont icon-yingyezhongyingyeshijianicon"></i>
+                            <i className={item.info.state==0?"iconfont icon-yingyezhongyingyeshijianicon" :"iconfont icon-dayang"}></i>
                             <h2>{item.info.shop_name}</h2>
                             <p>
                                 <em className="iconfont icon-xing"></em><b>{item.info.star}</b>
@@ -80,14 +81,14 @@ class BohaiStores extends Component {
                     }  
                    {
                        ZeroThree.map((item)=>(
-                        <li key={item.page_list_relevance_id} style={{display:2==activeIndex?'flex':'none'}}>
+                        <li key={item.shop_id} style={{display:2==activeIndex?'flex':'none'}}>
                         <span className="left">
                         {/* item.info.pic_path */}
                             <img src={'https://u2.0xiao.cn'+item.info.pic_path} />
                            
                         </span>
                         <span className="right">
-                            <i className="iconfont icon-yingyezhongyingyeshijianicon"></i>
+                            <i className={item.info.state==0?"iconfont icon-yingyezhongyingyeshijianicon" :"iconfont icon-dayang"}></i>
                             <h2>{item.info.shop_name}</h2>
                             <p>
                                 <em className="iconfont icon-xing"></em><b>{item.info.star}</b>
@@ -123,6 +124,7 @@ class BohaiStores extends Component {
         })
       
     }
+   
 }
 
 export default BohaiStores

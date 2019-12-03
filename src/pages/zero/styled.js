@@ -83,7 +83,7 @@ export const BohaiContent=styled.div`
         height:0.4rem;
     }
     .icon-paixu{
-        position: fixed;
+        position:  fixed;
         z-index: 99;
         right: 0.2rem;;
         bottom: 0.8rem;
@@ -98,7 +98,30 @@ export const BohaiContent=styled.div`
         color:#fff;
         font-size:0.18rem;
         text-align:center;
-      
+    .rank{
+        position: absolute;
+        width:0.82rem;
+        height:0.92rem;
+        display:flex;
+        right:0.4rem;
+        top:-0.75rem;
+        flex-direction:column;
+        display:flex;
+        border-top:1px solid #ccc;
+        border-right:1px solid #ccc;;
+        border-left:1px solid #ccc;
+        background:#fff;
+        z-index:30;
+        li{
+            width:100%;
+            height:0.31rem;
+            border-bottom:1px solid #ccc;
+            font-size:0.14rem;
+            text-align:center;
+            line-height:0.31rem;
+            color:#333;
+        }
+        }
     }
 `
 export const BohaiBanner =styled.div`

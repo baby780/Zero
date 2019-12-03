@@ -239,7 +239,7 @@ export const DianContent =styled.div`
                 flex-direction:column;
                 padding-right:0.08rem;
                 h2{
-                    font-size: 0.16rem;
+                    font-size: 0.13rem;
                 }
                 i{
                     font-size:0.12rem;

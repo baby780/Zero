@@ -5,7 +5,9 @@ import {getBoahiAction} from "../../actions/bohaiAction.js"; */
 import { HashRouter, Route, Redirect, Switch, Link, NavLink } from "react-router-dom";
 import BohaiStores from "components/Bohaistore";
 import { Carousel, WingBlank } from 'antd-mobile';
-
+import {connect} from "react-redux";
+import {mapStateToProps,mapDispatchToProps} from "../../components/Bohaistore/mapStore"
+@connect(mapStateToProps,mapDispatchToProps)
 
 class Bohai extends React.Component {
     constructor() {
@@ -13,13 +15,34 @@ class Bohai extends React.Component {
         this.state = {
             ScrollTop: "",
             imgHeight: 176,
+            shop: [{
+                "id":51393,
+                "image":"https://u2.0xiao.cn/0ixao/upload/badge/image/20171013/59e081279b126.png",
+                "name":"零食超市"
+            },
+            {
+                "id":87909,
+                "image":"https://u2.0xiao.cn/0xiao/upload/site_item/image/20191105/5dc1820fa44b3.png",
+                "name":"宅急快药"
+            },
+            {
+                "id":53224,
+                "image":"https://u2.0xiao.cn/0ixao/upload/badge/image/20170926/59c9a53dd5f62.png",
+                "name":"新鲜水果"
+            },
+            {
+                "id":88990,
+                "image":"https://u2.0xiao.cn/0xiao/upload/site_item/image/20191008/5d9ca4a5ac2b6.png",
+                "name":"蛋糕店"
+            }
+        ],
+        show:false,
+       
         }
     }
     render() {
-        let { ScrollTop } = this.state;
-       
-     
-        
+        let { ScrollTop,shop,show} = this.state;
+        /* console.log(indexZero,indexZeroTwo,indexZeroThree); */
         return (
             <div className="Bohai" >
                 {/* 头部 */}
@@ -37,102 +60,99 @@ class Bohai extends React.Component {
                 </BohaiTop>
                 <BohaiContent onScroll={this.handleScroll.bind(this)} ref="bodyBox">
                     <a className="abbr"></a>
-                    <a className="iconfont icon-paixu" style={{ display: ScrollTop ? 'block' : 'none' }}></a>
+                    <a className="iconfont icon-paixu" style={{ display: ScrollTop ? 'block' : 'none' }}  onClick={this.handleTodo.bind(this)}>
+                    <div className="rank" style={{display:show?"block":"none"}}>
+                        <li onClick={this.handleChange.bind(this,0)}>默认排序</li>
+                        <li onClick={this.handleChange.bind(this,1)}> 营业状态</li>
+                        <li onClick={this.handleChange.bind(this,2)}>单量排序</li>
+
+                    </div>
+                    </a>
+                    {/* */}
+                   
                     {/* 广告 */}
 
 
                     <BohaiBanner>
 
 
-                    <WingBlank>
-        <Carousel
-          autoplay={true}
-          infinite={true}
-       
-        >
-          
-           
-              <img
-                src="https://u2.0xiao.cn/0xiao/upload/core/slide/image/20191105/5dc183c8e32fc.png"
-                alt=""
-                style={{ width: '100%', verticalAlign: 'top' }}
-                onLoad={() => {
-                  // fire window resize event to change height
-                  window.dispatchEvent(new Event('resize'));
-                  this.setState({ imgHeight: 'auto' });
-                }}
-              />
-                <img
-                src="https://u2.0xiao.cn/0xiao/upload/core/slide/image/20191111/5dc97464ccb32.jpg"
-                alt=""
-                style={{ width: '100%', verticalAlign: 'top' }}
-                onLoad={() => {
-                  // fire window resize event to change height
-                  window.dispatchEvent(new Event('resize'));
-                  this.setState({ imgHeight: 'auto' });
-                }}
-              />
-                <img
-                src="https://u2.0xiao.cn/0xiao/upload/core/slide/image/20191110/5dc82541a43d8.jpg"
-                alt=""
-                style={{ width: '100%', verticalAlign: 'top' }}
-                onLoad={() => {
-                  // fire window resize event to change height
-                  window.dispatchEvent(new Event('resize'));
-                  this.setState({ imgHeight: 'auto' });
-                }}
-              />
-                <img
-                src="https://u2.0xiao.cn/0xiao/upload/core/slide/image/20191117/5dd0acc4d4ea8.jpg"
-                alt=""
-                style={{ width: '100%', verticalAlign: 'top' }}
-                onLoad={() => {
-                  // fire window resize event to change height
-                  window.dispatchEvent(new Event('resize'));
-                  this.setState({ imgHeight: 'auto' });
-                }}
-              />
-                <img
-                src="https://u2.0xiao.cn/0xiao/upload/core/slide/image/20191124/5dda9b2c98a5d.jpg"
-                alt=""
-                style={{ width: '100%', verticalAlign: 'top' }}
-                onLoad={() => {
-                  // fire window resize event to change height
-                  window.dispatchEvent(new Event('resize'));
-                  this.setState({ imgHeight: 'auto' });
-                }}
-              />
-           
-       
-        </Carousel>
-      </WingBlank>
+                        <WingBlank>
+                            <Carousel
+                                autoplay={true}
+                                infinite={true}
+
+                            >
+
+
+                                <img
+                                    src="https://u2.0xiao.cn/0xiao/upload/core/slide/image/20191105/5dc183c8e32fc.png"
+                                    alt=""
+                                    style={{ width: '100%', verticalAlign: 'top' }}
+                                    onLoad={() => {
+                                        // fire window resize event to change height
+                                        window.dispatchEvent(new Event('resize'));
+                                        this.setState({ imgHeight: 'auto' });
+                                    }}
+                                />
+                                <img
+                                    src="https://u2.0xiao.cn/0xiao/upload/core/slide/image/20191111/5dc97464ccb32.jpg"
+                                    alt=""
+                                    style={{ width: '100%', verticalAlign: 'top' }}
+                                    onLoad={() => {
+                                        // fire window resize event to change height
+                                        window.dispatchEvent(new Event('resize'));
+                                        this.setState({ imgHeight: 'auto' });
+                                    }}
+                                />
+                                <img
+                                    src="https://u2.0xiao.cn/0xiao/upload/core/slide/image/20191110/5dc82541a43d8.jpg"
+                                    alt=""
+                                    style={{ width: '100%', verticalAlign: 'top' }}
+                                    onLoad={() => {
+                                        // fire window resize event to change height
+                                        window.dispatchEvent(new Event('resize'));
+                                        this.setState({ imgHeight: 'auto' });
+                                    }}
+                                />
+                                <img
+                                    src="https://u2.0xiao.cn/0xiao/upload/core/slide/image/20191117/5dd0acc4d4ea8.jpg"
+                                    alt=""
+                                    style={{ width: '100%', verticalAlign: 'top' }}
+                                    onLoad={() => {
+                                        // fire window resize event to change height
+                                        window.dispatchEvent(new Event('resize'));
+                                        this.setState({ imgHeight: 'auto' });
+                                    }}
+                                />
+                                <img
+                                    src="https://u2.0xiao.cn/0xiao/upload/core/slide/image/20191124/5dda9b2c98a5d.jpg"
+                                    alt=""
+                                    style={{ width: '100%', verticalAlign: 'top' }}
+                                    onLoad={() => {
+                                        // fire window resize event to change height
+                                        window.dispatchEvent(new Event('resize'));
+                                        this.setState({ imgHeight: 'auto' });
+                                    }}
+                                />
+
+
+                            </Carousel>
+                        </WingBlank>
 
                     </BohaiBanner>
                     {/* 导航 */}
                     <BohaiNav>
 
                         <HashRouter>
-
-
-                            {/* */}
-                            <Link to="/dian">
-                                <img src="https://u2.0xiao.cn/0ixao/upload/badge/image/20171013/59e081279b126.png" />
-                                <p>零食超市</p>
-                            </Link >
-
-
-                            <Link to="/dian">
-                                <img src="https://u2.0xiao.cn/0xiao/upload/site_item/image/20191105/5dc1820fa44b3.png" />
-                                <p>宅急快药</p>
-                            </Link >
-                            <Link to="/dian">
-                                <img src="https://u2.0xiao.cn/0ixao/upload/badge/image/20170926/59c9a53dd5f62.png" />
-                                <p>新鲜水果</p>
-                            </Link >
-                            <Link to="/dian">
-                                <img src="https://u2.0xiao.cn/0xiao/upload/site_item/image/20191008/5d9ca4a5ac2b6.png" />
-                                <p>蛋糕店</p>
-                            </Link >
+                        {/* */}
+                            {
+                                shop.map((item)=>(
+                                <Link to={"/dian/"+item.id} key={item.id}>
+                                    <img src={item.image} />
+                                    <p>{item.name}</p>
+                                </Link >
+                                ))
+                            }
                             <a>
                                 <img src="https://u2.0xiao.cn/0xiao/upload/badge/image/20180319/5aaf9d4011ed7.png" />
                                 <p>驾校招生</p>
@@ -228,37 +248,48 @@ class Bohai extends React.Component {
                             </li>
                         </ul>
                     </BohaiSpecial>
-                   
-                      
 
-                      <BohaiStores/>
-                   
+
+
+                    <BohaiStores />
+
                 </BohaiContent>
             </div>
         )
     }
     handleScroll() {
-        let height=this.refs.bodyBox.scrollTop;
-        if(height>1000){
+        let height = this.refs.bodyBox.scrollTop;
+        if (height > 1000) {
             this.setState({
-                ScrollTop:height
+                ScrollTop: height
             })
-        }else{
+        } else {
             this.setState({
-                ScrollTop:""
+                ScrollTop: ""
             })
-        }  
+        }
     }
-    componentDidMount(){
-        this.handelSetime();
+    componentDidMount() {
+        this.handleSetime();
+     
     }
-    handelSetime(){
+    handleSetime() {
         setTimeout(() => {
-            this.setState({
-              data: ['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI'],
-            });
-          }, 100);
+           
+        }, 100);
     }
+    handleTodo(){
+        this.setState({
+            show:!this.state.show
+        })
+        
+    }
+    handleChange(index){
+       this.props.handleAsyncZero(index);
+       this.props.handleAsyncTwoZero(index);
+       this.props.handleAsyncThreeZero(index);
+    }
+   
 
 
 }

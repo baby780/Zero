@@ -50,29 +50,29 @@ class Mine extends React.Component{
                     </li>
                     <li >
                         <div className="li_left">
-                            <img src="https://static.0xiao.com/Public/release/img/user/user_myexpress-36c9b77db3.png"/>
-                            我的快递
+                            <img src="https://static.0xiao.com/Public/release/img/user/user_myprint-78f34b4555.png"/>
+                            我的打印
                         </div>
                         <div className="iconfont icon-zuo"></div>
                     </li>
                     <li >
                         <div className="li_left">
-                            <img src="https://static.0xiao.com/Public/release/img/user/user_myexpress-36c9b77db3.png"/>
-                            我的快递
+                            <img src="https://static.0xiao.com/Public/release/img/user/user_mycoupon-96d4050772.png"/>
+                            我的票劵
                         </div>
                         <div className="iconfont icon-zuo"></div>
                     </li>
                     <li >
                         <div className="li_left">
-                            <img src="https://static.0xiao.com/Public/release/img/user/user_myexpress-36c9b77db3.png"/>
-                            我的快递
+                            <img src="https://static.0xiao.com/Public/release/img/user/user_myscore-a66a7c2ce6.png"/>
+                            我的原力
                         </div>
                         <div className="iconfont icon-zuo"></div>
                     </li>
                     <li >
                         <div className="li_left">
-                            <img src="https://static.0xiao.com/Public/release/img/user/user_myexpress-36c9b77db3.png"/>
-                            我的快递
+                            <img src="https://static.0xiao.com/Public/release/img/user/user_debate-8da925ea9b.png"/>
+                            校辩领域
                         </div>
                         <div className="iconfont icon-zuo"></div>
                     </li>
@@ -80,15 +80,15 @@ class Mine extends React.Component{
                 <Minelinks_list2>
                 <li >
                         <div className="li_left">
-                            <img src="https://static.0xiao.com/Public/release/img/user/user_myexpress-36c9b77db3.png"/>
-                            我的快递
+                            <img src="https://static.0xiao.com/Public/release/img/user/user_address-85e91ebce0.png"/>
+                            备用地址
                         </div>
                         <div className="iconfont icon-zuo"></div>
                     </li>
                     <li >
                         <div className="li_left">
-                            <img src="https://static.0xiao.com/Public/release/img/user/user_myexpress-36c9b77db3.png"/>
-                            我的快递
+                            <img src="https://static.0xiao.com/Public/release/img/user/user_configure-1b82f020c0.png"/>
+                            我的配置
                         </div>
                         <div className="iconfont icon-zuo"></div>
                     </li>
@@ -96,29 +96,22 @@ class Mine extends React.Component{
                 <Minelinks_list3>
                 <li >
                         <div className="li_left">
-                            <img src="https://static.0xiao.com/Public/release/img/user/user_myexpress-36c9b77db3.png"/>
-                            我的快递
+                            <img src="https://static.0xiao.com/Public/release/img/user/service_list-495bcd4378.png"/>
+                            帮助反馈
                         </div>
                         <div className="iconfont icon-zuo"></div>
                     </li>
                     <li >
                         <div className="li_left">
-                            <img src="https://static.0xiao.com/Public/release/img/user/user_myexpress-36c9b77db3.png"/>
-                            我的快递
+                            <img src="https://static.0xiao.com/Public/release/img/user/user_safe-457251ce89.png"/>
+                            安全设置
                         </div>
                         <div className="iconfont icon-zuo"></div>
                     </li>
                     <li >
                         <div className="li_left">
-                            <img src="https://static.0xiao.com/Public/release/img/user/user_myexpress-36c9b77db3.png"/>
-                            我的快递
-                        </div>
-                        <div className="iconfont icon-zuo"></div>
-                    </li>
-                    <li >
-                        <div className="li_left">
-                            <img src="https://static.0xiao.com/Public/release/img/user/user_myexpress-36c9b77db3.png"/>
-                            我的快递
+                            <img src="https://static.0xiao.com/Public/release/img/user/user_ware-92f95c7bf9.png"/>
+                            免费开店
                         </div>
                         <div className="iconfont icon-zuo"></div>
                     </li>

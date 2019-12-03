@@ -57,7 +57,7 @@ export const NoTabBarRoute=[
         meta:{}
     },
     {   
-        path:"/dian",
+        path:"/dian/:id",
         component:Dian,
         meta:{}
     }

@@ -6,6 +6,12 @@ module.exports=(app)=>{
         pathRewrite:{
             "^/ajax":""
         }
-    }))
+        
+    },))
 }
 // https://tjbhzy.0xiao.com
+
+
+//247
+
+// https://sjzmc.0xiao.com/Shop/getBindShopGoods?shop_id=82018
