@@ -44,8 +44,9 @@ export const DianHeader=styled.div`
         }
     
 `
+
 export const DianTop =styled.div`
-    background: url(https://u2.0xiao.cn/3cfood_shop/license/image/ec662f512e955873.jpeg) center center no-repeat;
+    background:url("https://u2.0xiao.cn/${props=>props.urls}")  center center no-repeat;
     background-size: cover;
     width:100%;
     height:2rem;
@@ -190,88 +191,13 @@ export const DianSan=styled.div`
     } 
 
 `
-
 export const DianContent =styled.div`
     width:100%;
     display:flex;
-    .content_left{
-        width:1.03rem;
-        display:flex;
-        flex-direction:column;
-        background: #f3f3f3;
-        overflow-y: auto;
-        li{
-            width:100%;
-            height:0.34rem;
-            padding:0.08rem 0.05rem;
-            font-size:0.12rem;
-            color: #333;
-            text-align:center;
-        }
-    }
-    .content_right{
-        width:2.9rem;
-        display:flex;
-        flex-direction:column;
-        p{
-            width:100%;
-            height:0.34rem;
-            padding:0rem 0.1rem;
-            font-size:0.14rem;
-            color: #555;
-            line-height:0.34rem;
-        }
-        li{
-            width:100%;
-            height:0.75rem;
-            padding:0 0.1rem 0.15rem 0.1rem;
-            display:flex;
-            img{
-                width:0.8rem;
-                height:100%;
-                border-radius: 0.05rem;
-                margin-right:0.1rem;
-            }
-            span{
-                width:2.2rem;
-                height:100%;
-                display:flex;
-                flex-direction:column;
-                padding-right:0.08rem;
-                h2{
-                    font-size: 0.13rem;
-                }
-                i{
-                    font-size:0.12rem;
-                    color:#888;
-                    margin-top:0.02rem;
-                }
-                b{
-                    width:100%;
-                    height:0.2rem;
-                    display:flex;
-                    justify-content:space-between;
-                    margin-top:0.03rem;
-                    i{
-                        font-size:0.12rem;
-                        color: #e22;
-                    }
-                    .circle{
-                        width:0.2rem;
-                        height:0.19rem;
-                        background: #FF0000;
-                        color:#fff;
-                        font-size:0.15rem;
-                        text-align:center;
-                        line-height:0.19rem;
-                        border-radius: 50%;
-                    }
-                }
-            }
-        }
-    }
+   
 
 `
+
 
 
 export const  DianButton=styled.div`
@@ -281,47 +207,7 @@ export const  DianButton=styled.div`
     position: fixed;
     bottom:0;
     display:flex;
-    justify-content:space-between
-    .Button_left{
-        height:100%;
-        width:1.8rem;
-        display:flex;
-        align-items:center;
-        font-size:0.18rem;
-        padding:0 0.2rem;
-        color:#fff;
-        em{
-            color: #999;
-            font-size:0.12rem;
-            margin-left:0.05rem;
-            span{
-                font-size:0.15rem;
-                margin-right:0.03rem;
-            }
-
-        }
-    }
-    .Button_right{
-        width:1.5rem;
-        height:100%;
-        color:#fff;
-        display:flex;
-        i{
-            height:100%;
-            color:#fff;
-            width:0.5rem;
-            text-align:center;
-            line-height:0.5rem;
-            font-size:0.15rem;
-        }
-        span{
-            height:100%;
-            background: #FF0000;
-            font-size:0.18rem;
-            width:1rem;
-            text-align:center;
-            line-height:0.5rem;
-        }
-    }
+    justify-content:space-between;
+   
 
 `

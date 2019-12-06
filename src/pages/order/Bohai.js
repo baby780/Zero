@@ -6,7 +6,6 @@ import {mapStateToProps,mapDispatchToProps} from "./mapStore"
 class Order extends React.Component{
     render(){
         let {Like,Ding}=this.props;
-        console.log(Ding);
         return( 
             <div className="Order">
                 <OrderContent>

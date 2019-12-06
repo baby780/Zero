@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import { BohaiStore } from "./styled"
 import {connect} from "react-redux";
 import {mapStateToProps,mapDispatchToProps} from "./mapStore"
+import { HashRouter, Route, Redirect, Switch, Link, NavLink } from "react-router-dom";
 @connect(mapStateToProps,mapDispatchToProps)
 class BohaiStores extends Component {
     constructor(){
@@ -9,8 +10,8 @@ class BohaiStores extends Component {
         this.state={
            btn:["特色美食","面类盖饭","饮品烧烤"],
            activeIndex:0,
+          
         }
-       
     }
     render() {
         let {ZeroTwo,ZeroThree,Zero}=this.props;
@@ -25,11 +26,13 @@ class BohaiStores extends Component {
                          } 
                     </div>
                 <ul className="content"> 
+              
                 {
                     Zero.map((item)=>(
-                        <li key={item.shop_id} style={{display:0==activeIndex?'flex':'none'}}>
+                      /*   <Link to={"/dian/"+item.shop_id} > */
+                      /* ,name:item.info.shop_name,img:item.info.pic_path,total:item.info.month_total,star:item.info.star,address:item.info.address */
+                       <Link to={{pathname:"/dian/"+item.shop_id,query:{id:item.shop_id,name:item.info.shop_name,img:item.info.pic_path,total:item.info.month_total,star:item.info.star,address:item.info.address}}} key={item.shop_id} style={{display:0==activeIndex?'flex':'none'}} >
                         <span className="left">
-                        {/* item.info.pic_path */}
                             <img src={'https://u2.0xiao.cn'+item.info.pic_path} />
                            
                         </span>
@@ -39,7 +42,7 @@ class BohaiStores extends Component {
                             <p>
                                 <em className="iconfont icon-xing"></em><b>{item.info.star}</b>
                                 月售：
-               <span>{item.info.month_total}单</span>
+                        <span>{item.info.month_total}单</span>
                             </p>
                             <p>
                                 起价: <span>￥{item.info.min_price}</span> 配送:<span>￥0</span>
@@ -49,12 +52,13 @@ class BohaiStores extends Component {
                             </p>
                             <p className="iconfont icon-location"> {item.info.address}</p>
                         </span>
-                    </li>
+                        </Link>
+                  
                         ))
                     }  
                      {
                        ZeroTwo.map((item)=>(
-                        <li key={item.shop_id} style={{display:1==activeIndex?'flex':'none'}}>
+                        <Link to={{pathname:"/dian/"+item.shop_id,query:{id:item.shop_id,name:item.info.shop_name,img:item.info.pic_path,total:item.info.month_total,star:item.info.star,address:item.info.address}}} key={item.shop_id} style={{display:1==activeIndex?'flex':'none'}} >
                         <span className="left">
                         {/* item.info.pic_path */}
                             <img src={'https://u2.0xiao.cn'+item.info.pic_path} />
@@ -76,12 +80,12 @@ class BohaiStores extends Component {
                             </p>
                             <p className="iconfont icon-location"> {item.info.address}</p>
                         </span>
-                    </li>
+                        </Link>
                         ))
                     }  
                    {
                        ZeroThree.map((item)=>(
-                        <li key={item.shop_id} style={{display:2==activeIndex?'flex':'none'}}>
+                        <Link to={{pathname:"/dian/"+item.shop_id,query:{id:item.shop_id,name:item.info.shop_name,img:item.info.pic_path,total:item.info.month_total,star:item.info.star,address:item.info.address}}} key={item.shop_id} style={{display:2==activeIndex?'flex':'none'}} >
                         <span className="left">
                         {/* item.info.pic_path */}
                             <img src={'https://u2.0xiao.cn'+item.info.pic_path} />
@@ -103,9 +107,10 @@ class BohaiStores extends Component {
                             </p>
                             <p className="iconfont icon-location"> {item.info.address}</p>
                         </span>
-                    </li>
+                        </Link>
                         ))
                     }  
+                    
                 </ul> 
             </BohaiStore>
 

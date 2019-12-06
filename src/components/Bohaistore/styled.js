@@ -26,7 +26,7 @@ export const BohaiStore =styled.div`
         display:flex;
         flex-direction:column;
         background:#fff;
-        li{
+        a{
             width:100%;
             height:1.13rem;
             padding:0.12rem 0.1rem 0.1rem 0.1rem;

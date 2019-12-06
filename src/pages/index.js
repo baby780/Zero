@@ -47,3 +47,7 @@ export const login = Loadable({
 })
 
 
+export const Ding =Loadable({
+    loader:()=>import("./ding"),
+    loading:Loading
+})

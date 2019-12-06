@@ -3,7 +3,8 @@ import {
     Mine,
     Order,
     Zero,
-    Dian
+    Dian,
+    Ding
 } from "pages"
 
 
@@ -59,6 +60,11 @@ export const NoTabBarRoute=[
     {   
         path:"/dian/:id",
         component:Dian,
+        meta:{}
+    },
+    {
+        path:"/ding",
+        component:Ding,
         meta:{}
     }
 ];
