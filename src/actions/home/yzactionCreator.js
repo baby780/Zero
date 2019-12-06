@@ -1,3 +1,4 @@
+
 import {homeType,recoType,compType,headType,listType} from "./yzactionType"
 import {createAction} from "redux-actions"
 import {yzhome,yzreco,yzcomp,yzhead,yzlist} from "api/yahome"
