@@ -1,11 +1,10 @@
-const { override, fixBabelImports ,addWebpackAlias,addDecoratorsLegacy} = require('customize-cra');
+const { override, fixBabelImports,addWebpackAlias,addDecoratorsLegacy } = require('customize-cra');
 const path = require("path");
 module.exports = override(
-    fixBabelImports('import', {
+      fixBabelImports('import', {
         libraryName: 'antd-mobile',
         style: 'css',
-    }),
-
+      }),
     //别名配置
 
     addWebpackAlias({

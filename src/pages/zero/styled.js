@@ -64,7 +64,7 @@ export const BohaiContent=styled.div`
     top:0rem;
     bottom:0rem;
     right:0;
-    background: #f3f3f3
+    background: #f3f3f3;
     padding-bottom:0.5rem;
     padding-top:0.4rem;
     overflow-y:auto;
@@ -258,7 +258,7 @@ export const BohaiSpecial =styled.div`
             display:flex;
             flex-direction:column;
             justify-content:space-around;
-            align-item:center;
+            align-items:center;
             b{
                 height:0.2rem;
                 font-size:0.12rem;

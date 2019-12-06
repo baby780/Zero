@@ -1,5 +1,5 @@
 import http from "utils/request";
-import axios from "axios";
+
 export const ZeroApi = (page_list)=>http.get({
     url:"/ajax/Shop/getPageListByShop",
     data:{
@@ -35,7 +35,7 @@ export const DianApi =(id)=>http.get({
     }
 })
 
-export const LikeApi =_=>axios({
+export const LikeApi =_=>http.get({
     url:"/ajax/Order/getRecommendGoods"
 })
 

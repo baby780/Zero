@@ -11,7 +11,7 @@ class Order extends React.Component{
                 <OrderContent>
                     <ul className="Order_list">
                         {
-                            Ding.map((item,index)=>(
+                            Ding?Ding.map((item,index)=>(
                             <li key={index}>
                                 <h2>{item.shop_name}<i className="iconfont icon-zuo"></i></h2>
                                 <p>订单：<a>点击查看>></a></p>
@@ -20,7 +20,7 @@ class Order extends React.Component{
                                 <p className="botton">时间：{item.create_time}<a className="iconfont icon-paobu">查进程</a></p>
                                 <button>点 评</button>
                             </li>
-                            ))
+                            )):''
                         }
                        
                        
@@ -29,13 +29,13 @@ class Order extends React.Component{
                         <h2>猜你喜欢:</h2>
                         <div className="list">
                             {
-                                Like.map((item)=>(
+                                Like?Like.map((item)=>(
                                     <a key={item.goods_id}>
                                     <img src= {'https://u2.0xiao.cn'+item.goods_path}/>
                                     <p>{item.goods_name}</p>
                                     <i>￥{item.price}</i>
                                     </a>
-                                ))
+                                )):''
                             }
                                
                                

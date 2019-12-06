@@ -8,7 +8,7 @@ export default (routes) => {
     function isLayout(route) {
         if (route.meta.flag) {
             return (
-                <Layout path={route.path}>
+                <Layout path={route.path} key={route.path}>
                     <route.component />
                 </Layout>
             )

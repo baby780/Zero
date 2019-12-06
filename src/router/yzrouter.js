@@ -1,4 +1,4 @@
-import {headlines,homepage,member,paid,login} from "../pages"
+import {list,headlines,homepage,member,paid,login,school,recommend,comprehensive,detail} from "../pages"
 
 export const TabBar=[
     {
@@ -10,6 +10,35 @@ export const TabBar=[
             requiredAuth:false,
             flag:true
         },
+        children:[
+            {
+                path:"/homepage/school",
+                component:school,
+                text:"校园外卖",
+                meta:{
+                    requiredAuth:false,
+                    flag:true
+                },
+            },
+            {
+                path:"/homepage/recommend",
+                component:recommend,
+                text:"优选推荐",
+                meta:{
+                    requiredAuth:false,
+                    flag:true
+                },
+            },
+            {
+                path:"/homepage/comprehensive",
+                component:comprehensive,
+                text:"综合排序",
+                meta:{
+                    requiredAuth:false,
+                    flag:true
+                },
+            },
+        ]
   
     },
     {
@@ -19,7 +48,7 @@ export const TabBar=[
         icon:"\ue662",
         meta:{
             requiredAuth:false,
-            flag:true
+            flag:false
         }
     },
     {
@@ -49,6 +78,19 @@ export const NoTabBar=[
         {
             path:"/login",
             component:login
+        },
+        {
+            path:"/list/:id/:name",
+            component:list,
+            meta:{
+                flag:false
+            }
+        },{
+            path:"/detail",
+            component:detail,
+            meta:{
+                
+            }
         }
     
 ]

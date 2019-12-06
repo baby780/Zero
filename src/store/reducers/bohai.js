@@ -1,19 +1,17 @@
 import { handleActions } from "redux-actions";
-import { ZeroAsyncType, ZeroTwoAsyncType, ZeroThressAsyncType,DianAsyncType,LikeAsyncType,DingAsyncType} from "actions/actionsTypes"
+import { ZeroAsyncType, ZeroTwoAsyncType, ZeroThressAsyncType,DianAsyncType,LikeAsyncType,
+    DingAsyncType,LoginType} from "actions/actionsTypes"
 
 const defaultState = {
     Zero: [],
     ZeroTwo: [],
     ZeroThree: [],
     add: "0",
-
-
     Sort:[],
     Goods:[],
-
     Like:[],
-
-    Ding:[]
+    Ding:[],
+    userinfo:{}
 
 }
 
@@ -137,5 +135,10 @@ export default handleActions({
         let DingState=JSON.parse(JSON.stringify(state));
         DingState.Ding=action.payload.data.data;
         return DingState;
+    },
+    [LoginType]:(state,action)=>{
+        let userState = Object.assign({},state);
+        userState.userinfo = action.payload;
+        return userState;
     }
 }, defaultState)

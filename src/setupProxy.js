@@ -1,17 +1,15 @@
-const proxy=require("http-proxy-middleware");
-module.exports=(app)=>{
+const proxy = require("http-proxy-middleware");
+module.exports = (app)=>{
     app.use("/ajax",proxy({
-        target:"https://tjbhzy.0xiao.com",
+        target:"http://tjlivtc.0xiao.com",
         changeOrigin:true,
         pathRewrite:{
             "^/ajax":""
         }
+    }))
+    app.use("/users",proxy({
+        target:"http://39.105.204.151:3000",
+        changeOrigin:true,
         
-    },))
+    }))
 }
-// https://tjbhzy.0xiao.com
-
-
-//247
-
-// https://sjzmc.0xiao.com/Shop/getBindShopGoods?shop_id=82018

@@ -15,7 +15,7 @@ export const OrderContent=styled.div`
         flex-direction:column;
      li{
         width:100%;
-        height:1.6rem  
+        height:1.6rem;
         display:flex;
         flex-direction:column;
         border-top: 0.012rem solid #ddd;
@@ -92,7 +92,7 @@ export const Orderlike=styled.div`
     height:1.96rem;
     display:flex;
     flex-direction:column;
-    margin-top:15%
+    margin-top:15%;
     h2{
         font-size:0.14rem;
         color: #666;
@@ -125,7 +125,7 @@ export const Orderlike=styled.div`
                 margin-top:0.1rem;
             }
             i{
-                font-size:0.12rem
+                font-size:0.12rem;
                 color: #e22;
                 margin-top:0.1rem;
             }

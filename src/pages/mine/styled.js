@@ -20,10 +20,10 @@ export const MineTop = styled.div`
         width:0.75rem;
         height:100%;
         position: relative;
-        margin-right:3%
+        margin-right:3%;
         img{
             width:100%;
-            height:100%
+            height:100%;
             border-radius: 50%;
         }
         em{

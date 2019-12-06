@@ -4,7 +4,8 @@ import {
     Order,
     Zero,
     Dian,
-    Ding
+    Ding,
+    Info
 } from "pages"
 
 
@@ -65,7 +66,14 @@ export const NoTabBarRoute=[
     {
         path:"/ding",
         component:Ding,
-        meta:{}
+        meta:{},
+       
+    },{
+        path:"/info",
+        component:Info,
+        meta:{
+            requiredAuth:true
+        }
     }
 ];
 

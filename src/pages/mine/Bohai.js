@@ -1,18 +1,32 @@
 import React from "react";
 import {Minecontent,MineTop,MineNav,Minelinks_list,Minelinks_list2,Minelinks_list3,MineBottom} from "./styled";
+import {withRouter} from "react-router-dom"
+@withRouter
 class Mine extends React.Component{
+    constructor(props){
+        super(props);
+        this.state={
+            photo:"",
+            name:""
+        }
+    }
     render(){
+        this.data=localStorage.getItem("userinfo")?JSON.parse(localStorage.getItem("userinfo")):'';
+        this.updata = localStorage.getItem("upInfo")?JSON.parse(localStorage.getItem("upInfo")):localStorage.getItem("userinfo");
+        this.data.name=this.updata.name?this.updata.name:this.data.name;
+        this.data.unrlPic= this.updata.photo?this.updata.photo:this.data.unrlPic;
+        let {photo,name} = this.state;
         return( 
             <div className="Mine">
                 <Minecontent>
                 <MineTop>
-                    <div className="user_head ">
-                        <img src="https://u2.0xiao.cn/0xiao/user/head_img/image/3c2192cf3d79c78c.jpeg"/>
+                    <div className="user_head " onClick={this.handleInfo.bind(this)}>
+                        <img src={photo}/>
                         <em>♀</em>
                     </div>
                     <div className="ovh">
                         <p>
-                            <span>笨@</span>
+                            <span>{name}</span>
                             <img className="user_grade_sign" src="https://static.0xiao.com/Public/release/img/user/grade_sign_1-00edb0e425.png" />
                         </p>
                         <p>
@@ -123,6 +137,15 @@ class Mine extends React.Component{
                 </Minecontent>
             </div>
         )
+    }
+    componentDidMount(){
+        this.setState({
+            photo:this.data.unrlPic,
+            name:this.data.name
+        })
+    }
+    handleInfo(){
+        this.props.history.push("/info") 
     }
 }
 
