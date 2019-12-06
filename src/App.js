@@ -1,9 +1,8 @@
 import React from 'react';
-import { RouteConfig } from "router";
-import routeEach from "utils/routeEach";
-import routeEachs from "utils/routerEatch"
-import { ConfigRouter } from "router/yzrouter"
-import { HashRouter, Redirect, Switch } from "react-router-dom"
+// import { Button } from 'antd-mobile';
+import {ConfigRouter} from "router/yzrouter"
+import routeEach from "utils/routerEatch"
+import {HashRouter,Redirect,Switch} from "react-router-dom"
 
 class App extends React.Component {
   render() {
@@ -11,19 +10,15 @@ class App extends React.Component {
 
       <div className="kly">
         <HashRouter>
-          <Switch>
-            <Redirect from="/" to="/Bohai" exact />
-            {routeEach(RouteConfig)}
+        <Switch>
             <Redirect from="/" to="/homepage" exact />
-            {routeEachs(ConfigRouter)}
-          </Switch>
-        </HashRouter>
-      </div>
+            {routeEach(ConfigRouter)} 
+        </Switch>
+      </HashRouter>
+    </div>
 
     )
   }
 }
 
-
 export default App;
-

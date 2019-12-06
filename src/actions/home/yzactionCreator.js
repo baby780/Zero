@@ -1,7 +1,7 @@
 
-import {homeType,recoType,compType,headType,listType} from "./yzactionType"
+import {homeType,recoType,compType,headType,listType,searchType} from "./yzactionType"
 import {createAction} from "redux-actions"
-import {yzhome,yzreco,yzcomp,yzhead,yzlist} from "api/yahome"
+import {yzhome,yzreco,yzcomp,yzhead,yzlist,yzsearch} from "api/yahome"
  
 export const homeAction =(id)=>{
    let homwAction=createAction(homeType,(data)=>({data:data}))
@@ -47,5 +47,13 @@ export const listAction=(id)=>{
     return async(dispatch)=> {
         let data=await yzlist(id)
          dispatch(listActions(data))
+    }
+}
+export const searchAction=(name)=>{
+    let searchActions=createAction(searchType,data=>data)
+    return async (dispatch)=> {
+        let data=await yzsearch(name)
+
+        dispatch(searchActions(data))
     }
 }

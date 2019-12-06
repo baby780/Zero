@@ -1,27 +1,5 @@
 import Loadable from "react-loadable";
-import Loading from "common/loading/index.js";
-
-
-export const Dian =Loadable({
-    loader:_=>import("./dian/Bohai"),
-    loading:Loading
-})
-export const Login =Loadable({
-    loader:_=>import("./login/Bohai"),
-    loading:Loading
-})
-export const Mine =Loadable({
-    loader:_=>import("./mine/Bohai"),
-    loading:Loading
-})
-export const Order =Loadable({
-    loader:_=>import("./order/Bohai"),
-    loading:Loading
-})
-export const Zero =Loadable({
-    loader:_=>import("./zero/Bohai"),
-    loading:Loading
-})
+import Loading from "../common/loading"
 
 
 export const homepage = Loadable({
@@ -67,5 +45,11 @@ export const detail=Loadable({
     loader:()=>import("./detail/yzdetail"),
     loading:Loading
 })
-
-
+export const toutiao=Loadable({
+    loader:()=>import("./toutiao/yztoutiao"),
+    loading:Loading
+})
+export const search=Loadable({
+    loader:()=>import("./search/yzsearch"),
+    loading:Loading
+})

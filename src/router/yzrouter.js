@@ -1,4 +1,4 @@
-import {list,headlines,homepage,member,paid,login,school,recommend,comprehensive,detail} from "../pages"
+import {list,headlines,search,homepage,member,toutiao,paid,login,school,recommend,comprehensive,detail} from "../pages"
 
 export const TabBar=[
     {
@@ -72,6 +72,7 @@ export const TabBar=[
 
         }
     },
+    
 ]
 export const NoTabBar=[
     
@@ -91,7 +92,21 @@ export const NoTabBar=[
             meta:{
                 
             }
-        }
+        },
+        {
+            path:"/toutiao",
+            component:toutiao,
+            meta:{
+                
+            }
+        },
+        {
+            path:"/search",
+            component:search,
+            meta:{
+               
+            }
+        },
     
 ]
 export const ConfigRouter=TabBar.concat(NoTabBar)

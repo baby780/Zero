@@ -1,5 +1,5 @@
 import {handleActions} from "redux-actions"
-import {homeType,recoType,compType,headType,listType} from "actions/home/yzactionType"
+import {homeType,recoType,compType,headType,listType,searchType} from "actions/home/yzactionType"
 
 const defaultState={
     home:[],
@@ -8,7 +8,8 @@ const defaultState={
     head:[],
     list:[],
     title:[],
-    arr:[]
+    arr:[],
+    goods:[]
 }
 export default handleActions({
     [homeType]:(state,action)=>{
@@ -49,6 +50,13 @@ export default handleActions({
         listState.list=action.payload.data.noClassify
         console.log(listState.list)
         return listState
+    },
+    [searchType]:(state,action)=>{
+   
+        let searchState=JSON.parse(JSON.stringify(state));
+       
+        searchState.goods=action.payload.data
+        return searchState
     }
     
 },defaultState)

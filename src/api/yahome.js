@@ -36,3 +36,10 @@ export const yzlist=(id)=>http.get({
         shop_id:id
     }
 })
+
+export const yzsearch=(name)=>http.get({
+    url:"/ajax/Index/search",
+    data:{
+        shop_name:name
+    }
+})

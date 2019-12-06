@@ -30,7 +30,7 @@ class homepage extends Component {
                     <div id="header">
                         <p className="iconfont icon-location">石家庄医学高等专科学校</p>
 
-                        <span  >
+                        <span  onClick={this.handle.bind(this)}>
                             <h2 className="iconfont icon-xingtaiduICON_sousuo---copy"></h2>
                             <h3>搜索</h3>
                         </span>
@@ -188,7 +188,9 @@ class homepage extends Component {
            
         )
     }
-   
+    handle(){
+        this.props.history.push("/search")
+    }
 }
 
 export default homepage
