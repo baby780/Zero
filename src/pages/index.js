@@ -97,5 +97,8 @@ export const detail=Loadable({
     loader:()=>import("./detail/yzdetail"),
     loading:Loading
 })
-
+export const Info = Loadable({
+    loader:()=>import("./updateInfo"),
+    loading:Loading
+})
 

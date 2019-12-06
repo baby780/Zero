@@ -2,6 +2,7 @@ import React from "react";
 import { Historycenter } from "./styled"
 import { mapStateToProps, mapDispatchToProps } from "./mapStore";
 import { connect } from "react-redux";
+import Betterscroll from "common/yzbscroll";
 @connect(mapStateToProps, mapDispatchToProps)
 class HistoryContent extends React.Component {
     constructor(){
@@ -15,6 +16,7 @@ class HistoryContent extends React.Component {
         let {historyList} = this.props
         let {yue,date,year} = this.state
         return (
+            <Betterscroll>
             <Historycenter>
                 <h2 className="tody">
                     <span>{yue}月{date}日</span>历史上的今天
@@ -22,21 +24,21 @@ class HistoryContent extends React.Component {
                 </h2>
                 <ol className="content">
                     {
-                        historyList.map((item, index) => (
+                        historyList?historyList.map((item, index) => (
                             <li key={index}>
                                 <img src={item.pic} style={{display:item.pic===""?'none':'block'}} />
                                 <p className="p1">{item.title}</p>
                                 <p className="p2"><span>{item.year}年</span>{item.lunar}</p>
                                 <p className="p3">{item.ago}年前</p>
                             </li>
-                        ))
+                        )):''
                     }
                 </ol>
             </Historycenter>
+            </Betterscroll>
         )
     }
     componentDidMount() {
-        this.props.handleHistoryList(4)
         let nowTime = new Date()
         var yue = nowTime.getMonth()+1;//获取当前月
         var date = nowTime.getDate();//获取当前日

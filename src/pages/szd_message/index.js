@@ -50,24 +50,31 @@ class Headline extends React.Component {
             </Fragment>
         )
     }
+    
     handleShow(index) {
-        this.setState({
-            activeIndex: index
-        })
         switch (index) {
             case 0:
-                this.props.handleSchoolList(1)
+                //this.props.handleBenSchool(10,4)
                 break;
             case 1:
                 this.props.handleSchoolList(2)
                 break;
             case 2:
-                this.props.handleWorldList(3)
+                if(!localStorage.getItem("world")){
+                    this.props.handleWorldList(3)
+                }
+                
                 break;
             case 3:
-                this.props.handleHistoryList(4)
+                if(!localStorage.getItem("history")){
+                    this.props.handleHistoryList(4)
+                }
                 break;
-        }
+            }
+        this.setState({
+            activeIndex: index
+        })
+        
     }
 }
 export default Headline

@@ -25,16 +25,11 @@ body,html{
 }
 #root{
     height:100%;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
+
     overflow: auto;
 }
 .kly{
-    width:100%;overflow-y:auto;
->>>>>>> 927e0a9746b5f26ff2b70b9b79f4346707a8614b
->>>>>>> szd
+    width:100%;height:100%;overflow-y:auto;
 }
 
 
