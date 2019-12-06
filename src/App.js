@@ -1,6 +1,7 @@
 import React from 'react';
 import { RouterConfig } from "router/index_szd";
 import routeEachd from "./utils/szd_routeEach";
+
 import { RouteConfig } from "router";
 import routeEach from "utils/routeEach";
 import routeEachs from "utils/routerEatch"
@@ -18,8 +19,6 @@ class App extends React.Component {
             {routeEach(RouteConfig)}
             <Redirect from="/" to="/homepage" exact />
             {routeEachs(ConfigRouter)}
-            <Redirect from="/" to="/home" exact />
-            {routeEachd(RouterConfig)}
             <Redirect from="/" to="/home" exact />
             {routeEachd(RouterConfig)}
           </Switch>
