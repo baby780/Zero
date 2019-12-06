@@ -1,8 +1,6 @@
-import {MessageContentAction,HistoryContentAction,WorldContentAction} from "actions/szd_home/actionCreate"
+import {MessageContentAction,HistoryContentAction,WorldContentAction,BenSchoolAction} from "actions/szd_home/actionCreate"
 export const mapStateToProps = (state)=>({
-    messageList:state.message.benSchoolList,
-    historyList:state.message.historyList,
-    worldList:state.message.newWorldList
+    
 })
 export const mapDispatchToProps = (dispatch)=>({
     handleSchoolList(index){
@@ -13,5 +11,8 @@ export const mapDispatchToProps = (dispatch)=>({
     },
     handleHistoryList(index){
         dispatch(HistoryContentAction(index))
+    },
+    handleBenSchool(size,region){
+        dispatch(BenSchoolAction(size,region))
     }
 })

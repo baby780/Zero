@@ -41,3 +41,15 @@ export const canteenList = (shopListId)=>http.get({
       page_list_id:shopListId
    }
 })
+
+export const benSchoolList = (size,region)=>http.get({
+   url:"/InfoOrder/getInfoOrder",
+   data:{
+      page:1,
+      size:size,
+      type:"",
+      region:region,
+      title:"",
+      put_where:4
+   }
+})

@@ -14,6 +14,7 @@ class Headline extends React.Component{
                     <span className="iconfont" onClick={this.handleSearch.bind(this)}>&#xe606;</span>
                 </div>
                 <FoodsContent/>
+                
             </FoodContent>
         )
     }

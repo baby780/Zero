@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { mapStateToProps, mapDispatchToProps } from "./mapStore";
 import { MainContent } from "./styled";
 import {withRouter} from "react-router-dom";
+import Betterscroll from "common/yzbscroll";
 @connect(mapStateToProps, mapDispatchToProps)
 @withRouter
 class ListContent extends React.Component {
@@ -44,6 +45,8 @@ class ListContent extends React.Component {
         let { list,show} = this.state;
         return (
             <MainContent>
+                <Betterscroll>
+             <div className="box">
                 <div className="first">
                     <a href="#">
                         <img src="https://u2.0xiao.cn/0ixao/upload/badge/image/20170923/59c6518ac586c.jpeg" />
@@ -163,7 +166,7 @@ class ListContent extends React.Component {
                     {
                         shopList.map((shop, ind) => (
                             <li key={ind}>
-                                <a href="#">
+                                <div className="tiao">
                                     <img src={shop.info.pic_path} />
                                     <h2>{shop.info.shop_name}</h2>
                                     <div className="clo1">
@@ -173,7 +176,7 @@ class ListContent extends React.Component {
                                     </div>
                                     <span className="iconfont open" style={{ display: shop.state==1?'block':'none' }}>&#xe63c;</span>
                                     <span className="close" style={{ display: shop.state==0?'block':'none' }}>暂停中</span>
-                                </a>
+                                </div>
                             </li>
                         ))
 
@@ -182,6 +185,8 @@ class ListContent extends React.Component {
                 </ul>
 
                 <span className="user_service"></span>
+            </div>
+            </Betterscroll>
             </MainContent>
         )
     }

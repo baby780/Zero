@@ -62,6 +62,9 @@ class FoodsContent extends React.Component {
                         </ul>
                     </div>
                 </div>
+                <div className="shopCar">
+                    
+                </div>
             </FoodConiter>
         )
     }

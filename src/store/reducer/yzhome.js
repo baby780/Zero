@@ -1,5 +1,5 @@
 import {handleActions} from "redux-actions"
-import {homeType,recoType,compType,headType,listType} from "actions/home/yzactionType"
+import {homeType,recoType,compType,headType,listType,} from "actions/home/yzactionType"
 
 const defaultState={
     home:[],

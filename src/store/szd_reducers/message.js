@@ -1,6 +1,5 @@
 import {handleActions} from 'redux-actions';
-import {MessageList,HistoryList,WordlList} from "actions/szd_home/actionType";
-import { push_uniq } from 'terser';
+import {MessageList,HistoryList,WordlList,BenSchoolList} from "actions/szd_home/actionType";
 const defaultState = {
     benSchoolList:[],
     historyList:[],
@@ -14,6 +13,11 @@ export default handleActions({
         let messageState = JSON.parse(JSON.stringify(state))
         messageState.benSchoolList = action.payload.data.data;
         return messageState
+    },
+    [BenSchoolList]:(state,action)=>{
+        let benSchoolState = JSON.parse(JSON.stringify(state))
+        benSchoolState.benSchoolList = action.payload.data.data
+        return benSchoolState
     },
     [WordlList]:(state,action)=>{
         let worldState = JSON.parse(JSON.stringify(state))
@@ -30,13 +34,9 @@ export default handleActions({
                 worldState.oldWorldList.push(q[m])
             }
         }
+        localStorage.setItem("world",JSON.stringify(worldState.oldWorldList))
         return worldState
     },
-    // [MessageList]:(state,action)=>{
-    //     let cityState = JSON.parse(JSON.stringify(state))
-    //     cityState.sameCityList = action.payload.data.data;
-    //     return cityState
-    // },
     [HistoryList]:(state,action)=>{
         let historyState = JSON.parse(JSON.stringify(state));
         historyState.historyList = action.payload.data.data.list;

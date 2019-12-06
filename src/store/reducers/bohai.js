@@ -1,19 +1,17 @@
 import { handleActions } from "redux-actions";
-import { ZeroAsyncType, ZeroTwoAsyncType, ZeroThressAsyncType,DianAsyncType,LikeAsyncType,DingAsyncType} from "actions/actionsTypes"
+import { ZeroAsyncType, ZeroTwoAsyncType, ZeroThressAsyncType,DianAsyncType,LikeAsyncType,
+    DingAsyncType,LoginType} from "actions/actionsTypes"
 
 const defaultState = {
     Zero: [],
     ZeroTwo: [],
     ZeroThree: [],
     add: "0",
-
-
     Sort:[],
     Goods:[],
-
     Like:[],
-
-    Ding:[]
+    Ding:[],
+    userinfo:{}
 
 }
 
@@ -125,38 +123,6 @@ export default handleActions({
         let DianState=JSON.parse(JSON.stringify(state));
         DianState.Sort=action.payload.data.data.sort;
         DianState.Goods=action.payload.data.data.goods;
-/* 
-        let Like=[
-            {
-                value: '125098',
-                label: '暖冬必备',
-            
-            children:[{
-                label: 'All Foods',
-                value: '1',
-                disabled: false,
-               
-             }]
-
-            }
-        ] */
-        // console.log(DianState.Goods);
-        //console.log(DianState.Sort);
-        //goods_sort_id
-        
-        // for(let n=0;n<DianState.Sort.length;n++){
-        //     for(let i=0;i<DianState.Goods.length;i++){
-        //         if(DianState.Sort[n].goods_sort_id==DianState.Goods[i].goods_sort_id){
-        //             DianState.Like.push({value:DianState.Sort[n].goods_sort_id,label:DianState.Sort[n].goods_sort_name,children:[{
-        //                 label:DianState.Goods[i].goods_name
-
-        //             }]})
-        //         }
-        //     }
-            
-        // }
-        //  console.log(DianState.Goods[0])
-        // console.log(DianState.Like);
         return DianState
 
     },
@@ -169,5 +135,10 @@ export default handleActions({
         let DingState=JSON.parse(JSON.stringify(state));
         DingState.Ding=action.payload.data.data;
         return DingState;
+    },
+    [LoginType]:(state,action)=>{
+        let userState = Object.assign({},state);
+        userState.userinfo = action.payload;
+        return userState;
     }
 }, defaultState)

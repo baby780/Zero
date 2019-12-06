@@ -1,6 +1,8 @@
- import {ListContent,ShopList,SearchList,MessageList,WordlList,HistoryList,DetailList,CanteenList} from "./actionType";
+ import {ListContent,ShopList,SearchList,MessageList,WordlList,HistoryList,
+   DetailList,CanteenList,BenSchoolList} from "./actionType";
  import {createAction} from "redux-actions";
- import {homeList,searchList,messageList,historyList,detailsList,canteenList} from "api/szd_homeApi"
+ import {homeList,searchList,messageList,historyList,detailsList,
+   canteenList,benSchoolList} from "api/szd_homeApi"
  export const ListContentAction = (listID)=>{
     let listAction = createAction(ListContent,(data)=>({data:data}))
      return async (dispatch)=>{
@@ -42,7 +44,8 @@ export const WorldContentAction = (range)=>{
 export const HistoryContentAction = (range)=>{
    let shopAction = createAction(HistoryList,(data)=>({data:data}))
    return async (dispatch)=>{
-      let data = await historyList(1,7,range)
+      let data = await historyList(1,7,range);
+      localStorage.setItem("history",JSON.stringify(data.data.list))
       dispatch(shopAction(data))
    }
 }
@@ -50,6 +53,7 @@ export const DetailContentAction = (shopId)=>{
    let shopAction = createAction(DetailList,(data)=>({data:data}))
    return async (dispatch) =>{ 
       let data=await detailsList(shopId)
+      
       dispatch(shopAction(data))
    };
 
@@ -59,5 +63,12 @@ export const CanteenContentAction = (shopListId)=>{
    return async (dispatch)=>{
       let data = await canteenList(shopListId)
       dispatch(shopAction(data))
+   }
+}
+
+export const BenSchoolAction = (size,region)=>{
+   return async (dispatch)=>{
+      let data = await benSchoolList(size,region);
+      console.log(data)
    }
 }
